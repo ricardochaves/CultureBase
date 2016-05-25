@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication3.Helpers;
-using WebApplication3.Models;
+using CultureBase.Helpers;
+using CultureBase.Models;
 
-namespace WebApplication3.Controllers
+namespace CultureBase.Controllers
 {
     public class HomeController : BaseController
     {

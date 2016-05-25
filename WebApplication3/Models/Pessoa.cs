@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication3.Models
+namespace CultureBase.Models
 {
     public class Pessoa
     {

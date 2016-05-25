@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 
-namespace WebApplication3.Helpers
+namespace CultureBase.Helpers
 {
     public class CultureHelper
     {

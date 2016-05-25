@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication3.Helpers;
+using CultureBase.Helpers;
 
-namespace WebApplication3.Controllers
+namespace CultureBase.Controllers
 {
     public class BaseController : Controller
     {
