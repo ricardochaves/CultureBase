@@ -59,6 +59,7 @@ namespace CultureBase.Controllers
                 cookie.Expires = DateTime.Now.AddYears(1);
             }
             Response.Cookies.Add(cookie);
+            
             return RedirectToAction("teste");
         }   
     }
