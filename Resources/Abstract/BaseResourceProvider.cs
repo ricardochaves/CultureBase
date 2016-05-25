@@ -71,12 +71,8 @@ namespace Resources.Abstract
         /// <returns>Resource</returns>
         protected abstract ResourceEntry ReadResource(string name, string culture);
 
-
-
-
         public void ResetCache()
         {
-
             resources = null;
         }
     }
