@@ -1,32 +1,32 @@
 # CultureBase
 
-Projeto feito para estudar a implementação de Resources de culture buscando informações no banco de dados SQLServer.
+Project designed to study the implementation of Resources of culture seeking information on SQLServer database.
 
-O modelo utlizado é o do [Nadeem Afana's](http://afana.me/post/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx)
+The model used is that of the [Nadeem Afana's](http://afana.me/post/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx)
 
-Foi feita uma alteração para que o cache seja reiniciado no momento desejado, uma solução por banco de dados, por exemplo, que permite a alteração das culturas pelo usuário a qualquer momento não pode depender de reiniciar a aplicação para o novo cache.
+A change was made so that the cache is restarted at the desired time, a solution for database, for example, that allows the user to change the culture at any time can not depend on restarting the application to the new cache.
 
-Antes de tentar entender o projeto leia todo o post, com ele você vai entender melhor o porjeto.
+Before attempting to understand the project read the whole [post](http://afana.me/post/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx), with it you will better understand the porjeto.
 
-# Alterações para manutenção do Cache
+# Changes to maintenance Cache
 
- - A classe BaseResourceProvider sofreu uma incluão de um metodo.
+ - The BaseResourceProvider class suffered an inclusion of a method.
 ```
 public void ResetCache()
 {
   resources = null;
 }
 ```
-A variável resources é onde os dados das culturas são incluído e mantidos, ao anular a variável você força uma nova consulta ao banco de dados e nova alimentação da variável.
+The variable resources is where the culture data are included and maintained, by annulling the variable you force a new query to the database and new feed variable.
 
- - A interface IResourceProvider sofreu a inclusão de um novo metodo.
+ - The IResourceProvider interface has undergone the inclusion of a new method
 ```
 void ResetCache();        
 ```
 
- - A classe ResourceBuilder sofreu uma alteração dentro do metodo Create.
+ - The ResourceBuilder class has undergone a change in the Create method.
  
- A constant header ficou dessa forma:
+ The constant header became thus:
  
  ```
 const string header =
@@ -54,9 +54,9 @@ namespace {0} {{
 }}";
 ```
 
-# Utilização da função de reset de cache
+# Using the cache reset function
 
-Você pode observar no controler HomeController a inclusão de um metodo feito somente para teste do reset:
+You can see the controller HomeController method including a reset is done only for the test:
 ```
 public void reset()
 {
@@ -64,5 +64,5 @@ public void reset()
 }
 ```
 
-Todas as implementação de como testar o cache nas views foram feitas baseadas no guia também do [Nadeem Afana's](http://afana.me/post/aspnet-mvc-internationalization.aspx)
+All implementation of how to test the cache in views were based on the guide also [Nadeem Afana's](http://afana.me/post/aspnet-mvc-internationalization.aspx)
 
