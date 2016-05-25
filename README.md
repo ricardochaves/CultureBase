@@ -11,7 +11,7 @@ Before attempting to understand the project read the whole [post](http://afana.m
 # Changes to maintenance Cache
 
  - The BaseResourceProvider class suffered an inclusion of a method.
-```
+```c#
 public void ResetCache()
 {
   resources = null;
@@ -20,7 +20,7 @@ public void ResetCache()
 The variable resources is where the culture data are included and maintained, by annulling the variable you force a new query to the database and new feed variable.
 
  - The IResourceProvider interface has undergone the inclusion of a new method
-```
+```c#
 void ResetCache();        
 ```
 
@@ -28,7 +28,7 @@ void ResetCache();
  
  The constant header became thus:
  
- ```
+ ```c#
 const string header =
 @"using System;
 using System.Collections.Generic;
@@ -57,7 +57,7 @@ namespace {0} {{
 # Using the cache reset function
 
 You can see the controller HomeController method including a reset is done only for the test:
-```
+```c#
 public void reset()
 {
   Resources.Resources.reset();
