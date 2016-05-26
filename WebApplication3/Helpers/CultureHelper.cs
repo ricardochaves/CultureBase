@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -73,6 +74,18 @@ namespace CultureBase.Helpers
             if (!name.Contains("-")) return name;
 
             return name.Split('-')[0]; // Read first part only. E.g. "en", "es"
+        }
+
+
+
+        public static string RetornaDescriptionCulture(Culture c)
+        {
+            var type = typeof(Culture);
+            var memInfo = type.GetMember(c.ToString());
+            var attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute),
+                false);
+            var description = ((DescriptionAttribute)attributes[0]).Description;
+            return description;
         }
     }
 }

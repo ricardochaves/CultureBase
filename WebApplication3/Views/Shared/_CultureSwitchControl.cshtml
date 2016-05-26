@@ -1,0 +1,24 @@
+﻿
+@Html.ActionLink("eng", "ChangeCulture", "Account",
+    new { lang = (int)CultureBase.Culture.en, returnUrl =
+    this.Request.RawUrl }, new { @class = "culture-link" })
+
+@Html.ActionLink("рус", "ChangeCulture", "Account",
+    new { lang = (int)CultureBase.Culture.ru, returnUrl =
+    this.Request.RawUrl }, new { @class = "culture-link" })
+
+@Html.ActionLink("pt-br", "ChangeCulture", "Account",
+    new
+    {
+        lang = (int)CultureBase.Culture.pt,
+        returnUrl =
+            this.Request.RawUrl
+    }, new { @class = "culture-link" })
+
+@Html.ActionLink("pt-br", "ChangeCulture", "Account",
+    new
+    {
+        lang = (int)CultureBase.Culture.ptbr,
+        returnUrl =
+            this.Request.RawUrl
+    }, new { @class = "culture-link" })

@@ -8,7 +8,7 @@ using CultureBase.Models;
 
 namespace CultureBase.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {
@@ -44,23 +44,23 @@ namespace CultureBase.Controllers
             Resources.Resources.reset();
         }
 
-        public ActionResult SetCulture(string culture)
-        {
-            // Validate input
-            culture = CultureHelper.GetImplementedCulture(culture);
-            // Save culture in a cookie
-            HttpCookie cookie = Request.Cookies["_culture"];
-            if (cookie != null)
-                cookie.Value = culture;   // update cookie value
-            else
-            {
-                cookie = new HttpCookie("_culture");
-                cookie.Value = culture;
-                cookie.Expires = DateTime.Now.AddYears(1);
-            }
-            Response.Cookies.Add(cookie);
+        //public ActionResult SetCulture(string culture)
+        //{
+        //    // Validate input
+        //    culture = CultureHelper.GetImplementedCulture(culture);
+        //    // Save culture in a cookie
+        //    HttpCookie cookie = Request.Cookies["_culture"];
+        //    if (cookie != null)
+        //        cookie.Value = culture;   // update cookie value
+        //    else
+        //    {
+        //        cookie = new HttpCookie("_culture");
+        //        cookie.Value = culture;
+        //        cookie.Expires = DateTime.Now.AddYears(1);
+        //    }
+        //    Response.Cookies.Add(cookie);
             
-            return RedirectToAction("teste");
-        }   
+        //    return RedirectToAction("teste");
+        //}   
     }
 }

@@ -9,6 +9,10 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CultureBase.Models;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+using System.ComponentModel;
+using CultureBase.Helpers;
 
 namespace CultureBase.Controllers
 {
@@ -17,6 +21,17 @@ namespace CultureBase.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+
+        [AllowAnonymous]
+        public ActionResult ChangeCulture(Culture lang, string returnUrl)
+        {
+
+            if (returnUrl.Length >= 3)
+            {
+                returnUrl = returnUrl.Substring(3);
+            }
+            return Redirect("/" + CultureHelper.RetornaDescriptionCulture(lang) + returnUrl);
+        }
 
         public AccountController()
         {
