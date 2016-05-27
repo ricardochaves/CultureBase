@@ -28,7 +28,7 @@ namespace CultureBase.Controllers
 
             if (returnUrl.Length >= 3)
             {
-                returnUrl = returnUrl.Substring(3);
+                returnUrl = returnUrl.Replace(returnUrl.Split('/')[1],"");
             }
             return Redirect("/" + CultureHelper.RetornaDescriptionCulture(lang) + returnUrl);
         }
