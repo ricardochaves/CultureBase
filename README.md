@@ -6,7 +6,7 @@ The model used is that of the [Nadeem Afana's](http://afana.me/post/aspnet-mvc-i
 
 A change was made so that the cache is restarted at the desired time, a solution for database, for example, that allows the user to change the culture at any time can not depend on restarting the application to the new cache.
 
-Before attempting to understand the project read the whole [post](http://afana.me/post/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx), with it you will better understand the porjeto.
+Before attempting to understand the project read the whole [post](http://afana.me/post/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx), with it you will better understand the project.
 
 # Changes to maintenance Cache
 
